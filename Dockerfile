@@ -1,11 +1,13 @@
 FROM node:16
 
+RUN npm install -g pnpm && pnpm -v
+
 WORKDIR /app
 
 COPY package.json .
-RUN npm install && npm run build
+RUN pnpm install && pnpm run build
 
-COPY index.js .
+COPY dist/index.js .
 
 EXPOSE 9008
 
