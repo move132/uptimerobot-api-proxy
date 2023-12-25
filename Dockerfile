@@ -1,14 +1,12 @@
 FROM node:16
 
-RUN npm install -g pnpm && pnpm -v
+RUN npm install -g pnpm && npm install -g tsup
 
 WORKDIR /app
 
-COPY package.json .
+COPY index.ts package.json tsup.config.ts tsconfig.json .
 RUN pnpm install && pnpm run build
-
-COPY dist/index.js .
 
 EXPOSE 9008
 
-CMD [ "node", "index.js" ]
+CMD [ "node", "./dist/index.js" ]
