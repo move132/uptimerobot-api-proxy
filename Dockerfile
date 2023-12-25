@@ -4,7 +4,7 @@ RUN npm install -g pnpm && npm install -g tsup
 
 WORKDIR /app
 
-COPY index.ts package.json tsup.config.ts tsconfig.json .
+COPY ./src/index.ts package.json tsup.config.ts tsconfig.json .
 RUN pnpm install && pnpm run build
 
 EXPOSE 9008
