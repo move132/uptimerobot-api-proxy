@@ -5,7 +5,7 @@ WORKDIR /app
 COPY package.json .
 RUN npm install
 
-COPY index.js .
+COPY ./dist/index.js .
 
 EXPOSE 9008
 
