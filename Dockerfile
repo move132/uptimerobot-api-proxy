@@ -5,7 +5,7 @@ WORKDIR /app
 COPY package.json .
 RUN npm install
 
-COPY proxy.js .
+COPY index.js .
 
 EXPOSE 9008
 
