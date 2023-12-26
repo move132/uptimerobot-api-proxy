@@ -12,7 +12,7 @@
 # CMD [ "node", "./dist/index.js" ]
 
 # 设置基础镜像
-FROM node:16
+FROM node:slim
 
 # 设置工作目录
 WORKDIR /app
@@ -24,7 +24,7 @@ COPY package.json /app/
 RUN npm install -g pnpm && pnpm install
 
 # 复制其他文件
-COPY ./src/index.ts . /app
+COPY ./src/index.ts tsup.config.ts /app
 
 # 调试命令，列出容器中的文件
 RUN ls /app
