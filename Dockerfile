@@ -35,6 +35,9 @@ RUN ls /app
 # 构建项目
 RUN npm run build
 
+# 调试命令，列出容器中的文件
+RUN ls /app
+
 # 暴露端口
 EXPOSE 3006
 ENV PORT 3006
