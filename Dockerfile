@@ -23,8 +23,11 @@ COPY package.json /app/
 # 安装依赖
 RUN npm install -g pnpm && pnpm install
 
-# 复制其他文件
-COPY ./src/index.ts tsup.config.ts /app
+# 复制 index.ts 文件
+COPY ./src/index.ts /app/
+
+# 复制 src 目录
+COPY ./src/ /app/src/
 
 # 调试命令，列出容器中的文件
 RUN ls /app
