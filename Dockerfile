@@ -17,8 +17,8 @@ FROM node:16
 # 设置工作目录
 WORKDIR /app
 
-# 复制 package.json 和 pnpm-lock.yaml
-COPY package.json pnpm-lock.yaml /app/
+# 复制 package.json
+COPY package.json /app/
 
 # 安装依赖
 RUN npm install -g pnpm && pnpm install
