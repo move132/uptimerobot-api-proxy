@@ -6,7 +6,14 @@ const app = express()
 const port = process.env.PORT || 3006
 const baseUrl = process.env.BASE_URL || 'https://api.uptimerobot.com/v2'
 
-app.use(cors()) // 启用 CORS 中间件
+app.use(
+	cors({
+		origin: '*',
+		methods: ['GET', 'POST', 'PUT', 'DELETE'],
+		allowedHeaders: ['Content-Type', 'Authorization'],
+		credentials: true
+	})
+) // 启用 CORS 中间件
 
 app.get('/api/*', async (req, res) => {
 	const apiKey = req.query.api_key // 获取 api_key 参数的值

@@ -54,17 +54,10 @@ WORKDIR /app
 # COPY package*.json tsup.config.ts ./src/index.ts ./
 COPY . .
 
-# 调试命令，列出容器中的文件
-RUN ls /app
-RUN ls /app/src
 # 安装依赖
-# RUN npm install -g pnpm && npm install -g tsup && pnpm install
-RUN npm install
+RUN npm install -g pnpm && pnpm install
 # 构建项目
-RUN npm run build
-
-# 调试命令，列出容器中的文件
-RUN ls /app
+RUN pnpm run build
 
 # 暴露端口
 EXPOSE 3006
