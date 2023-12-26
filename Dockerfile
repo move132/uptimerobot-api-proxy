@@ -24,7 +24,10 @@ COPY package.json /app/
 RUN npm install -g pnpm && pnpm install
 
 # 复制其他文件
-COPY . /app
+COPY ./src/index.ts . /app
+
+# 调试命令，列出容器中的文件
+RUN ls /app
 
 # 构建项目
 RUN npm run build
