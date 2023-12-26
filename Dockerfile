@@ -51,7 +51,8 @@
 FROM node:slim
 WORKDIR /app
 
-COPY package*.json tsup.config.ts ./src/index.ts ./
+COPY package*.json tsup.config.ts ./
+COPY ./src/index.ts ./src
 
 # 调试命令，列出容器中的文件
 RUN ls /app
