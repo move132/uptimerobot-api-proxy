@@ -1,5 +1,12 @@
 # uptimer-proxy
 
+# Build
+```bash
+ docker build --no-cache -t uptime .
+```
+
+# 运行
+
 ```bash
 docker run \
   -itd

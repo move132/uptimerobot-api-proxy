@@ -57,7 +57,7 @@ COPY . .
 # 安装依赖
 RUN npm install -g pnpm && pnpm install
 # 构建项目
-RUN pnpm run build
+RUN pnpm run tsup
 
 # 暴露端口
 EXPOSE 3006
