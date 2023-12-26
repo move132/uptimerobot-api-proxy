@@ -8,8 +8,7 @@
 # 运行
 
 ```bash
-docker run \
-  -itd
+docker run -itd \
   -p 3006:3006 \
   --name uptimer-proxy \
   -e PORT=3006 \
