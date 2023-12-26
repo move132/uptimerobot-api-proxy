@@ -51,13 +51,18 @@
 FROM node:slim
 WORKDIR /app
 
-COPY package*.json tsup.config.ts ./
+COPY package*.json tsup.config.ts ./src/index.ts ./
+
+# 调试命令，列出容器中的文件
+RUN ls /app
 # 安装依赖
 RUN npm install -g pnpm && pnpm install
 # 构建项目
 RUN npm run tsup
 
 COPY . .
+# 调试命令，列出容器中的文件
+RUN ls /app
 
 # 暴露端口
 EXPOSE 3006
