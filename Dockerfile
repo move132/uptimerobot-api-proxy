@@ -51,17 +51,18 @@
 FROM node:slim
 WORKDIR /app
 
-COPY package*.json tsup.config.ts ./
-COPY ./src/index.ts ./src
+# COPY package*.json tsup.config.ts ./src/index.ts ./
+COPY . .
 
 # 调试命令，列出容器中的文件
 RUN ls /app
+RUN ls /app/src
 # 安装依赖
-RUN npm install -g pnpm && pnpm install
+# RUN npm install -g pnpm && npm install -g tsup && pnpm install
+RUN npm install
 # 构建项目
-RUN npm run tsup
+RUN npm run build
 
-COPY . .
 # 调试命令，列出容器中的文件
 RUN ls /app
 
