@@ -1,6 +1,6 @@
 
 # 设置基础镜像
-FROM node:slim-16.18.0
+FROM node:slim-16.18.1
 WORKDIR /app
 
 # COPY package*.json tsup.config.ts ./src/index.ts ./
