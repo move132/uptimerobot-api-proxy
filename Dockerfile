@@ -24,7 +24,7 @@
 FROM node:slim
 WORKDIR /app
 
-COPY ./dist .
+COPY . .
 
 # 暴露端口
 EXPOSE 3006
