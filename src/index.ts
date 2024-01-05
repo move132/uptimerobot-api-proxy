@@ -25,7 +25,7 @@ app.all('/api/*', async (req, res) => {
 	const proxyUrl = `${baseUrl}${apiUrl}`
 	const apiKey = req.query.api_key || req.body.api_key // 获取 api_key 参数的值
 	if (!apiKey) {
-		return res.status(400).json({code: 400, msg: 'api_key parameter is missing'})
+		return res.status(200).json({code: 400, msg: 'api_key parameter is missing'})
 	}
 	try {
 		const response = await axios.post(proxyUrl, {
